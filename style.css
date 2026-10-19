@@ -1,0 +1,627 @@
+
+/*  GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+
+/*COLORS AND GENERAL SETTINGS */
+:root {
+    --pink: #d85f83;
+    --deep-pink: #9c3457;
+    --cream: #fff8f0;
+    --dark: #27242a;
+    --muted: #6f6870;
+    --green: #234c3e;
+    --light-pink: #fce8e6;
+    --brown: #70452f;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+/*  backround color sa page*/
+body {
+    margin: 0;
+    background: #eaaed4;
+    color: var(--dark);
+    font-family: 'DM Sans', Arial, sans-serif;
+    line-height: 1.6;
+}
+/*  boarder sa image sa product*/
+img {
+    max-width: 100%;
+    border: 5px solid var(--light-pink);
+}
+a {
+    color: inherit;
+}
+h2,
+h3 {
+    line-height: 1.25;
+}
+/*3. HOME PAGE HERO */
+.hero,/*  Patisserie Plain bakery background */
+.page-banner {
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+/*  Background image sa pinakataas na part sa home page */
+.home-hero {
+    background-image: url('images/photo_2026-10-16_19-42-17.jpg');
+}
+/*  picture light adjustment home hero */
+.hero::before,
+.page-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+     90deg,
+     rgba(25, 15, 20, 0.35),
+     rgba(25, 15, 20, 0.15)
+);
+}
+/*background layer nga gibutang  sa  Patisserie Plain bakery text size */
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    width: min(750px, 90%);
+    padding: 5px 12px;
+}
+/* Patisserie Plain bakery text margin,padulong sa littlecakesmade */
+.hero h1,
+.page-banner h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.7rem, 7vw, 5.2rem);
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+    margin: 8px 0 12px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.25);
+}
+/* smallcakes Patisserie Plain bakery text margin */
+.eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.19em;
+    margin: 3px 0 3px;
+}
+/* littlecake tagline margin */
+.tagline {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin: 0 auto 5px;
+}
+/* PRODUCTS AND ABOUT PAGE BANNERS */
+.products-banner {
+    min-height: 180px;
+    background-image: url('images/photo_2026-10-16_19-42-17.jpg');
+}
+/* background image banner sa about us */
+.about-banner {
+    min-height: 180px;
+    background:
+        linear-gradient(rgba(50, 20, 35, 0.35), rgba(50, 20, 35, 0.35)),
+        url('images/photo_2026-10-16_19-42-17.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px 15px;
+}
+.about-banner::before {
+    display: none;
+}
+/* size spacing sa title */
+.about-banner h1 {
+    font-size: 42px;
+    margin: 0 0 10px;
+    letter-spacing: 4px;
+}
+/* subtitle */
+.about-banner p {
+    margin: 0;
+    font-size: 17px;
+}
+/* NAVIGATION BAR  background*/
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(18px, 6vw, 80px);
+    min-height: 62px;
+    background: var(--pink);
+    padding: 0 18px;
+    position: sticky;  /*magpabilin ang navbar while scrollling  */
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+/* design sa H,P,A */
+.navbar a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 62px;
+    color: #0e0221;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+/* color change siya pag eh tudlo ang mouse */
+.navbar a:hover,
+.navbar a.active {
+    color: #ffd36e;
+    border-bottom-color: #ffd36e;
+}
+/* BUTTONS*/
+.button {
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+    background: var(--pink);
+    color: white;
+    padding: 13px 22px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: background 0.2s, transform 0.2s;
+}
+.button:hover {  /* mo green ang button */
+    background: var(--green);
+    transform: translateY(-2px);
+}
+.order-btn {  /*order button   */
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 18px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.order-btn:hover { /*  mo change color pag eh hover*/
+    background: var(--deep-pink);
+}
+/* GENERAL SECTIONS AND HEADINGS */
+.section { /*sa content section  */
+    width: min(1120px, 90%);
+    margin: 0 auto;
+    padding: 25px 0;
+}
+.intro { /* intro section */
+    max-width: 780px;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2 { /*heading  */
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    margin: 6px 0 14px;
+}
+.pink-text {
+    color: var(--deep-pink);
+} /* home */
+.section-heading {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.section-heading > p:last-child {
+    margin-top: 0;
+    color: var(--muted);
+} /* katong text sa our menu */
+.section-title {
+    text-align: center;
+    margin: 20px 0;
+}
+/*CAKE PRODUCT GRID Used Products pages */
+.cake-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    width: 96%;
+    margin: 0 auto;
+}
+.cake-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+    border-radius: 15px;
+    background: #fff;
+    border: 1px solid #f0e6e6;
+    box-shadow: 0 8px 25px rgba(66, 34, 45, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.cake-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(66, 34, 45, 0.13);
+}
+.cake-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: var(--light-pink);
+} /*space sulod sa card  */
+.cake-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+} /* cake name design */
+.cake-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+} /*  */
+.cake-info p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+.price,
+.cake-price {
+    color: var(--deep-pink);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+.cake-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: auto;
+}
+.center {
+    text-align: center;
+    margin-top: 35px;
+}
+/* HOME PAGE promo*/
+.home-cake-grid,
+.home-favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 90%;
+    margin: 0 auto;
+}
+.home-favorites {
+    width: 94%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 10px 0 25px;
+}
+.home-favorites-heading {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.home-favorites-grid .cake-card,
+.home-cake-grid .cake-card {
+    min-width: 0;
+}
+.home-favorites-grid .cake-card img,
+.home-cake-grid .cake-card img {
+    height: 220px;
+}
+.home-favorites-grid .cake-info,
+.home-cake-grid .cake-info {
+    padding: 16px;
+}
+.home-view-all {
+    text-align: center;
+    margin-top: 35px;
+}
+/*  SWEET BANNER*/
+.sweet-banner {
+    background: var(--cream);
+    text-align: center;
+    padding: 55px 20px;
+    border-top: 1px solid #f4e7e5;
+    border-bottom: 1px solid #f4e7e5;
+}
+.sweet-banner h2 {
+    margin-top: 4px;
+}
+.sweet-banner p:not(.eyebrow) {
+    color: var(--muted);
+}
+/* ABOUT US STORY */
+.about-story { /*  story founder column*/
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 0;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: center;
+}/* line gold */
+.story-content h2 {
+    border-left: 5px solid #d4a72c;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+.story-content p {
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+.founder-card {
+    text-align: center;
+}
+.founder-card img {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 20px;
+    border-radius: 5px;
+}/*owner name design  */
+.founder-card h3 {
+    margin: 5px 0 5px;
+    font-size: 20px;
+     line-height: 1.2;
+}/*owner style  */
+.founder-card p {
+    color: #a6236b;
+    margin-top: 5px;
+}
+
+
+/*ABOUT US VALUES*/
+.values-section {
+    background: var(--cream);
+    padding: 55px max(5%, calc((100% - 1120px) / 2));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+.value-card {
+    background: #fff;
+    text-align: center;
+    border-radius: 12px;
+    padding: 28px 23px;
+    border: 1px solid #f3e3e6;
+}
+.value-icon {
+    color: var(--pink);
+    font-size: 2.1rem;
+}
+.value-card h3 {
+    margin: 10px 0;
+}
+
+.value-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+
+/*FIND US MAP AND CONTACT*/
+.find-us {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 35px 0 60px;
+}
+
+
+.find-us h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.find-us p {
+    color: #666;
+}
+
+.find-us iframe {
+    display: block;
+    width: 50%;
+    height: 400px;
+    border: 0;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.contact-strip {
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.contact-strip p:not(.eyebrow) {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+/*copyright  */
+/*FOOTER*/
+footer,
+.about-footer {
+    background: #201f22;
+    color: #eee;
+    text-align: center;
+    padding: 15px 15px;
+    font-size: 0.85rem;
+}
+
+footer p,
+.about-footer p {
+    margin: 0;
+}
+
+/* mag adjust sa screen sa website */
+/*TABLET RESPONSIVE*/
+@media (max-width: 900px) {
+    .cake-grid,
+    .home-cake-grid,
+    .home-favorites-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .about-story {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .values-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* MOBILE RESPONSIVE*/
+@media (max-width: 600px) {
+    .hero {
+        min-height: 180px;
+    }
+
+    .page-banner {
+        min-height: 250px;
+    }
+
+    .navbar {
+        gap: 18px;
+        min-height: 56px;
+        padding: 0 10px;
+    }
+
+    .navbar a {
+        min-height: 56px;
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+    }
+
+    .section {
+        width: 92%;
+        padding: 40px 0;
+    }
+
+    .cake-grid,
+    .home-cake-grid,
+    .home-favorites-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cake-card img,
+    .home-cake-grid .cake-card img,
+    .home-favorites-grid .cake-card img {
+        height: 200px;
+    }
+
+    .cake-info {
+        padding: 14px;
+    }
+
+    .about-banner h1 {
+        font-size: 30px;
+    }
+
+    
+.about-story {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px 0;
+}
+
+    .founder-card img {
+        height: 350px;
+    }
+
+    .values-section {
+        grid-template-columns: 1fr;
+        padding: 40px 5%;
+    }
+
+    .find-us iframe {
+        height: 320px;
+    }
+
+    .hero h1,
+    .page-banner h1 {
+        letter-spacing: 0.05em;
+    }
+
+    .sweet-banner {
+        padding: 40px 18px;
+    }
+}
+/* PROMO LABEL COLORS */
+
+.offer,
+.discount,
+.promoheart,
+.promo,
+.bundle,
+.optional
+ {
+    display: inline-block;
+    padding: 7px 12px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Limited Time Offer */
+.offer {
+    background-color: #ffe08a;
+    color: #70452f;
+}
+
+/* 45% OFF */
+.discount {
+    background-color: #d85f83;
+    color: white;
+}
+
+/* Anniversary and other promos */
+.promoheart {
+    background-color: #fce8e6;
+    color: #9c3457;
+    border: 1px solid #d85f83;
+}
+/* bring friend promo*/
+.promo {
+    background-color: #ffe08a;
+    color: #9c3457;
+    border: 1px solid #d85f83;
+}
+.bundle {
+    background-color: #bd2908;
+    color: #e2c7d0;
+    border: 1px solid #d85f83;
+}
+.optional {
+    background-color: #ffd1dc;
+    color: oklab(17.251% 0.05865 -0.02312 / 0.881);
+    border: 1px solid #d85f83;
+}
