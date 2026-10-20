@@ -458,8 +458,7 @@ h2 { /*heading  */
     margin-bottom: 25px;
 }
 
-/*copyright  */
-/*FOOTER*/
+
 footer,
 .about-footer {
     background: #201f22;
@@ -470,7 +469,7 @@ footer,
 }
 
 
-/* FOOTER - SAME PLACEMENT AS THE REFERENCE IMAGE */
+
 .about-footer {
     background: var(--cream);
     color: #604b59;
